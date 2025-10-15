@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* general Styles */
+*
+
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+  margin: 10px;
+  text-align: center;
+}
+
+h2 {
+    word-break: break-all;
+    align-self: center;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  
+  /* Book section styles */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 15px;
+}
+
+.book {
+  background-color: aqua;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px black;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
