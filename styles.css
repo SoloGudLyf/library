@@ -1,9 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* general Styles */
-*
-
-{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,34 +14,39 @@ h1 {
 }
 
 h2 {
-    word-break: break-all;
-    align-self: center;
-  }
-  p {
-    font-size: 1.2rem;
-  }
+  word-break: break-all;
+  align-self: center;
+}
+p {
+  font-size: 1.2rem;
+}
 
-  button{
-    padding: 5px 10px;
-    font-size: 1rem;
-    margin-left: 15px;
-    border-radius: 5px;
-    border: 0.5px solid rgba(0, 0, 0, 0.39);
-  }
-  
-  button:hover{
-    background-color: rgb(211, 209, 209);
-  }
+button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  margin-left: 15px;
+  border-radius: 5px;
+  border: 0.5px solid rgba(0, 0, 0, 0.39);
+}
 
-  button:active{
-    background-color: rgb(163, 162, 162);
- 
-  }
-  /* Book section styles */
+button:hover {
+  background-color: rgb(211, 209, 209);
+}
+
+button:active {
+  background-color: rgb(163, 162, 162);
+}
+
+dialog {
+  margin: auto;
+  border-radius: 5px;
+  border: 0.5px solid rgba(0, 0, 0, 0.514);
+}
+/* Book section styles */
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 15px;
   padding: 15px;
 }
@@ -55,32 +58,40 @@ h2 {
   padding: 15px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   gap: 10px;
   letter-spacing: 0.5px;
   line-height: 1.5;
 }
+.book button {
+  width: 150px;
+  align-self: center;
+}
+
+.book p:nth-child(3) {
+  flex-basis: 100%;
+}
 
 /* dialog box styles */
 
-form{
+form {
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 15px;
 }
 
-label:not(label[for="true"]):not(label[for="false"]){
+label:not(label[for="true"]):not(label[for="false"]) {
   display: block;
 }
 
-input[type="text"]{
+input[type="text"],
+input[type="number"] {
   height: 25px;
   font-size: 1rem;
   padding: 7px 5px 7px 3px;
 }
 
-.btns{
+.btns {
   display: flex;
   justify-content: center;
 }
