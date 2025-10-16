@@ -22,6 +22,23 @@ h2 {
   p {
     font-size: 1.2rem;
   }
+
+  button{
+    padding: 5px 10px;
+    font-size: 1rem;
+    margin-left: 15px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(0, 0, 0, 0.39);
+  }
+  
+  button:hover{
+    background-color: rgb(211, 209, 209);
+  }
+
+  button:active{
+    background-color: rgb(163, 162, 162);
+ 
+  }
   /* Book section styles */
 
 .container {
@@ -53,7 +70,7 @@ form{
   padding: 15px;
 }
 
-label{
+label:not(label[for="true"]):not(label[for="false"]){
   display: block;
 }
 
@@ -61,4 +78,9 @@ input[type="text"]{
   height: 25px;
   font-size: 1rem;
   padding: 7px 5px 7px 3px;
+}
+
+.btns{
+  display: flex;
+  justify-content: center;
 }
