@@ -18,29 +18,25 @@
     </div>
     <dialog class="dialog">
       <form action="#" method="dialog">
+        <h2>Book Info</h2>
         <label for="title"
-          >Title: <input type="text" id="title" name="tile"
+          >Title: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="title" name="tile"
         /></label>
         <label for="author"
-          >Author: <input type="text" id="author" name="author"
+          >Author: &nbsp; <input type="text" id="author" name="author"
         /></label>
         <label for="pages"
-          >Pages: <input type="text" id="pages" name="pages"
+          >Pages: &nbsp;&nbsp;&nbsp;<input type="text" id="pages" name="pages"
         /></label>
-        <label for="readStatus">Read: </label>
+        <label for="readStatus">Read: &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="readStatus" id="readStatus" value="true" />
+        True&nbsp;&nbsp;
         <input
-          type="checkbox"
+          type="radio"
           name="readStatus"
           id="readStatus"
-          value="readStatus"
-        />
-        True
-        <input
-          type="checkbox"
-          name="readStatus"
-          id="readStatus"
-          value="readStatus"
-        />False
+          value="false"
+        /> False</label>
       </form>
     </dialog>
 

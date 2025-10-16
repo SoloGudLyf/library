@@ -45,3 +45,21 @@ h2 {
   line-height: 1.5;
 }
 
+/* dialog box styles */
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+}
+
+label{
+  display: block;
+}
+
+input[type="text"]{
+  height: 25px;
+  font-size: 1rem;
+  padding: 7px 5px 7px 3px;
+}
