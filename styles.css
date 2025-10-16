@@ -71,6 +71,10 @@ dialog {
   flex-basis: 100%;
 }
 
+.book-btn-group {
+  display: flex;
+}
+
 /* dialog box styles */
 
 form {

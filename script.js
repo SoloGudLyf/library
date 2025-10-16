@@ -16,11 +16,23 @@ cancel.addEventListener("click", function () {
 
 // Check book clicked and then delete from myLibrary
 container.addEventListener("click", function (e) {
-  myLibrary.map((element, id) => {
-    if (element.id === e.target.dataset.id) {
-      myLibrary.splice(id, 1);
-    }
-  });
+  if (e.target.textContent === "Delete") {
+    myLibrary.map((element, id) => {
+      if (element.id === e.target.dataset.id) {
+        myLibrary.splice(id, 1);
+      }
+    });
+  } else if (
+    e.target.textContent === "Read" ||
+    e.target.textContent === "Not Read Yet"
+  ) {
+    myLibrary.map((element, id) => {
+      if (element.id === e.target.dataset.id) {
+        myLibrary[id].toggleReadStatus();
+        console.log(myLibrary[id]);
+      }
+    });
+  }
   displayBookToPage();
 });
 
@@ -66,8 +78,8 @@ function Book(title, author, pages, read, id) {
   this.id = id;
 }
 
-Book.prototype.info = function () {
-  return `The ${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
+Book.prototype.toggleReadStatus = function () {
+  this.read = this.read === "Read" ? "Not Read Yet" : "Read";
 };
 
 function addBookToLibrary(title, author, pages, readStatus, id) {
@@ -85,20 +97,39 @@ function displayBookToPage() {
     const pages = document.createElement("p");
     const readStatus = document.createElement("p");
     const deleteBTn = document.createElement("button");
+    const readStatusBtn = document.createElement("button");
+    const btnDiv = document.createElement("div");
 
     title.textContent = element.title;
     author.textContent = `Author: ${element.author}`;
     pages.textContent = `Number of Pages: ${element.pages}`;
     readStatus.textContent = `Read Status: ${element.read}`;
     deleteBTn.textContent = "Delete";
+    let read = element.read === "Read" ? "Not Read Yet" : "Read";
+    readStatusBtn.textContent = read;
 
     book.appendChild(title);
     book.appendChild(author);
     book.appendChild(pages);
     book.appendChild(readStatus);
-    book.appendChild(deleteBTn);
+
+    btnDiv.appendChild(deleteBTn);
+    btnDiv.appendChild(readStatusBtn);
+    btnDiv.classList.add("book-btn-group");
+    book.appendChild(btnDiv);
+
     book.classList.add("book");
     deleteBTn.dataset.id = element.id;
+    readStatusBtn.dataset.id = element.id;
     container.appendChild(book);
   }
 }
+
+const sampleBook = new Book("Title", "Solomon", 666, "Read");
+addBookToLibrary(
+  sampleBook.title,
+  sampleBook.author,
+  sampleBook.pages,
+  sampleBook.read,crypto.randomUUID()
+);
+displayBookToPage();

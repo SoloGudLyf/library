@@ -9,15 +9,7 @@
   <body>
     <h1>Library</h1>
     <button class="addBook">Add Book</button>
-    <div class="container">
-      <div class="book">
-        <h2>Title</h2>
-        <p>Author: Solomon</p>
-        <p>Number of Pages: 666</p>
-        <p>Read Status: Read</p>
-        <button>Delete</button>
-      </div>
-    </div>
+    <div class="container"></div>
     <dialog class="dialog">
       <form action="#" method="dialog">
         <h2>Book Info</h2>
@@ -29,13 +21,22 @@
           >Author: &nbsp; <input type="text" id="author" name="author"
         /></label>
         <label for="pages"
-          >Pages: &nbsp;&nbsp;&nbsp;<input type="number" id="pages" name="pages"
+          >Pages: &nbsp;&nbsp;&nbsp;<input
+            type="number"
+            id="pages"
+            name="pages"
         /></label>
         <label for="readStatus"
           >Read: &nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="readStatus" checked id="true" value="true" />
+          <input
+            type="radio"
+            name="readStatus"
+            checked
+            id="true"
+            value="true"
+          />
           <label for="true">True</label>&nbsp;&nbsp;
-          <input type="radio" name="readStatus"  id="false" value="false" />
+          <input type="radio" name="readStatus" id="false" value="false" />
           <label for="false">False</label></label
         >
         <div class="btns">
