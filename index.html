@@ -8,6 +8,7 @@
   </head>
   <body>
     <h1>Library</h1>
+    <button class="addBook">Add Book</button>
     <div class="container">
       <div class="book">
         <h2>Title</h2>
@@ -20,7 +21,8 @@
       <form action="#" method="dialog">
         <h2>Book Info</h2>
         <label for="title"
-          >Title: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="title" name="tile"
+          >Title: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" id="title" name="tile"
         /></label>
         <label for="author"
           >Author: &nbsp; <input type="text" id="author" name="author"
@@ -28,15 +30,17 @@
         <label for="pages"
           >Pages: &nbsp;&nbsp;&nbsp;<input type="text" id="pages" name="pages"
         /></label>
-        <label for="readStatus">Read: &nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="readStatus" id="readStatus" value="true" />
-        True&nbsp;&nbsp;
-        <input
-          type="radio"
-          name="readStatus"
-          id="readStatus"
-          value="false"
-        /> False</label>
+        <label for="readStatus"
+          >Read: &nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="readStatus" id="readStatus" value="true" />
+          True&nbsp;&nbsp;
+          <input type="radio" name="readStatus" id="readStatus" value="false" />
+          False</label
+        >
+        <div class="btns">
+          <button class="createBook">Create</button>
+          <button class="cancel">Cancel</button>
+        </div>
       </form>
     </dialog>
 
