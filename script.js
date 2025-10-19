@@ -29,7 +29,6 @@ container.addEventListener("click", function (e) {
     myLibrary.map((element, id) => {
       if (element.id === e.target.dataset.id) {
         myLibrary[id].toggleReadStatus();
-        console.log(myLibrary[id]);
       }
     });
   }
@@ -67,20 +66,18 @@ addBookBtn.addEventListener("click", () => {
 });
 
 // Book Object constructor
-function Book(title, author, pages, read, id) {
-  if (!new.target) {
-    throw Error("You must call this constructor with the new operator");
-  }
+class Book {
+  constructor(title, author, pages, read, id){
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
   this.id = id;
+  }
+  toggleReadStatus(){
+    this.read = this.read === "Read" ? "Not Read Yet" : "Read";
+  }
 }
-
-Book.prototype.toggleReadStatus = function () {
-  this.read = this.read === "Read" ? "Not Read Yet" : "Read";
-};
 
 function addBookToLibrary(title, author, pages, readStatus, id) {
   const newBook = new Book(title, author, pages, readStatus, id);
