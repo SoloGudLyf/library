@@ -37,12 +37,20 @@ container.addEventListener("click", function (e) {
 
 // Create book
 createBookBtn.addEventListener("click", function () {
-  if (
-    title.value.trim() === "" ||
-    pages.value.trim() === "" ||
-    author.value.trim() === ""
-  ) {
-    alert("Input can not be empty");
+  title.setCustomValidity("");
+  pages.setCustomValidity("");
+  author.setCustomValidity("");
+
+  if (title.value.trim() === "") {
+    title.setCustomValidity("Title field cannot be empty");
+    console.log("Hi");
+    return;
+  } else if (pages.value.trim() === "") {
+    pages.setCustomValidity("Pages field cannot be empty");
+    console.log("Hello");
+    return;
+  } else if (author.value.trim() === "") {
+    author.setCustomValidity("Author field cannot be empty");
     return;
   }
   let readStatus = document.querySelector("#true").checked
@@ -59,6 +67,7 @@ createBookBtn.addEventListener("click", function () {
   title.value = "";
   author.value = "";
   pages.value = "";
+  dialog.close();
 });
 
 addBookBtn.addEventListener("click", () => {
@@ -67,14 +76,14 @@ addBookBtn.addEventListener("click", () => {
 
 // Book Object constructor
 class Book {
-  constructor(title, author, pages, read, id){
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.id = id;
+  constructor(title, author, pages, read, id) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.id = id;
   }
-  toggleReadStatus(){
+  toggleReadStatus() {
     this.read = this.read === "Read" ? "Not Read Yet" : "Read";
   }
 }
@@ -127,6 +136,7 @@ addBookToLibrary(
   sampleBook.title,
   sampleBook.author,
   sampleBook.pages,
-  sampleBook.read,crypto.randomUUID()
+  sampleBook.read,
+  crypto.randomUUID()
 );
 displayBookToPage();
