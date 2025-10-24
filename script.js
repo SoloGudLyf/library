@@ -12,6 +12,7 @@ cancel.addEventListener("click", function () {
   title.value = "";
   author.value = "";
   pages.value = "";
+  dialog.close();
 });
 
 // Check book clicked and then delete from myLibrary
@@ -43,11 +44,9 @@ createBookBtn.addEventListener("click", function () {
 
   if (title.value.trim() === "") {
     title.setCustomValidity("Title field cannot be empty");
-    console.log("Hi");
     return;
   } else if (pages.value.trim() === "") {
     pages.setCustomValidity("Pages field cannot be empty");
-    console.log("Hello");
     return;
   } else if (author.value.trim() === "") {
     author.setCustomValidity("Author field cannot be empty");
